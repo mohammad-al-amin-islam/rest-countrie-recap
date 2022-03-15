@@ -10,11 +10,36 @@ const displayCountries = countries =>{
     container.innerHTML = countriesContainer.join(' ');
 
 }
-const getHTML = country =>{
+//in general system
+/* const getHTML = country =>{
     return `
     <div class='country'>
        <h1>${country.name.common}</h1>
        <img src="${country.flags.png}" alt="...">
+    </div>
+     
+    `
+} */
+
+//in destructuring system 1
+/* const getHTML = country =>{
+    const {name,flags} = country
+    return `
+    <div class='country'>
+       <h1>${name.common}</h1>
+       <img src="${flags.png}" alt="...">
+    </div>
+     
+    `
+} */
+//system 2
+const getHTML = ({name,flags,area,region}) =>{
+    return `
+    <div class='country'>
+       <h1>${name.common}</h1>
+       <p>Area : ${area}</p>
+       <p>Subcontinent : ${region}</p>
+       <img src="${flags.png}" alt="...">
     </div>
      
     `
